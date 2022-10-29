@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/layout.css";
+import Head from "next/head";
 
 const theme = {
   colors: {
@@ -15,12 +16,18 @@ function MyApp({ Component, pageProps }) {
   if (Component.getLayout) {
     return Component.getLayout(<Component {...pageProps} />);
   }
+
   return (
-    <ThemeProvider theme={theme3}>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
-    </ThemeProvider>
+    <>
+      <Head>
+        <title>Learning Next.JS</title>
+      </Head>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </ThemeProvider>
+    </>
   );
 }
 
