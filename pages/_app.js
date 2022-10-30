@@ -1,10 +1,12 @@
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemeProvider } from "styled-components";
-import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
 import "styles/layout.css";
 import Head from "next/head";
+import "components/Navbar.css";
+import Navbar from "components/Navbar";
+import { SessionProvider } from "next-auth/react";
 
 const theme = {
   colors: {
@@ -22,11 +24,13 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Learning Next.JS</title>
       </Head>
-      <ThemeProvider theme={theme}>
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </ThemeProvider>
+      <SessionProvider session={pageProps.session}>
+        <ThemeProvider theme={theme}>
+          <Navbar />
+          <Component {...pageProps} />
+          <Footer />
+        </ThemeProvider>
+      </SessionProvider>
     </>
   );
 }
