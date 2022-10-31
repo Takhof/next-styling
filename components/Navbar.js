@@ -5,7 +5,6 @@ function Navbar() {
   const { data: session, status } = useSession();
   return (
     <nav className="header">
-      {console.log(session, status)}
       <h1 className="logo">
         <a href="#">NextAuth</a>
       </h1>
@@ -43,7 +42,7 @@ function Navbar() {
             </Link>
           </li>
         )}
-        {session && status === "authenticated" && (
+        {status === "authenticated" && (
           <li>
             <Link legacyBehavior href="/api/auth/signout">
               <a
