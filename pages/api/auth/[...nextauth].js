@@ -2,6 +2,8 @@ import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import CognitoProvider from "next-auth/providers/cognito";
 import GoogleProvider from "next-auth/providers/google";
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
+import clientPromise from "../../../lib/mongodb";
 
 export default NextAuth({
   providers: [
@@ -19,4 +21,12 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
+  adapter: MongoDBAdapter(clientPromise),
+  database: `mongodb+srv://takhof:asdfasdf@cluster0.icqpwpr.mongodb.net/tomsDB?retryWrites=true&w=majority`,
+  session: {
+    jwt: true,
+  },
+  jwt: {
+    secret: "asihdufaospidf188297",
+  },
 });
