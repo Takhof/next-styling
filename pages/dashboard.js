@@ -2,7 +2,6 @@ import { useSession, getSession, signIn } from "next-auth/react";
 import { useEffect, useState } from "react";
 
 function Dashboard() {
-  const { data: session, status } = useSession();
   const [signedin, setSignedin] = useState(false);
 
   useEffect(() => {
