@@ -1,24 +1,18 @@
-import { useSession, getSession, signIn } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useSession, signIn } from "next-auth/react";
+import { useEffect } from "react";
 
 function Dashboard() {
-  const [signedin, setSignedin] = useState(false);
+  const { data: session } = useSession();
 
   useEffect(() => {
-    const waitSession = async () => {
-      const userData = await getSession();
-      if (!userData) {
-        signIn();
-      } else {
-        setSignedin(true);
-      }
-    };
-    waitSession();
-  }, []);
+    if (!session) {
+      signIn();
+    }
+  });
 
   return (
     <>
-      {!signedin && <h2>Loading...</h2>}
+      {!session && <h2>Loading... </h2>}
 
       <h1>Dashboard page</h1>
     </>
