@@ -28,6 +28,7 @@ function MyApp({ Component, pageProps }) {
         <ThemeProvider theme={theme}>
           <Navbar />
           <Component {...pageProps} />
+
           <Footer />
         </ThemeProvider>
       </SessionProvider>
