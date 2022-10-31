@@ -8,11 +8,7 @@ function Navbar() {
       <h1 className="logo">
         <a href="#">NextAuth</a>
       </h1>
-      <ul
-        className={`main-nav ${
-          !session && status === "loading" ? "loading" : "loaded"
-        }`}
-      >
+      <ul className={`main-nav`}>
         <li>
           <Link legacyBehavior href="/">
             <a>Home</a>
