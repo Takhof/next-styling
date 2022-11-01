@@ -1,5 +1,5 @@
 import styles from "../styles/About.module.scss";
-import Footer from "../components/Footer";
+import Footer from "../components/layout/Footer";
 import Head from "next/head";
 
 function About() {

@@ -31,7 +31,7 @@ function Navbar() {
               href="/api/auth/signin"
               onClick={(e) => {
                 e.preventDefault();
-                signIn("github");
+                signIn();
               }}
             >
               Sign In
