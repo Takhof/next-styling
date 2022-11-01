@@ -3,8 +3,8 @@ import styles from "../styles/Home.module.css";
 import { useSession } from "next-auth/react";
 
 export default function Home() {
-  const { data: session, status } = useSession();
-  console.log(session, status);
+  const { data: session, data, status } = useSession();
+  console.log(data, session, status);
   return (
     <div className={styles.container}>
       <main className={styles.main}>
