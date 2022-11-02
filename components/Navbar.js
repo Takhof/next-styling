@@ -1,7 +1,29 @@
 import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
+// import { signIn, signOut, useSession } from "next-auth/react";
+import { Auth } from "aws-amplify";
 
 function Navbar() {
+  const signingUp = async function signUp() {
+    try {
+      const { user } = await Auth.signUp({
+        username,
+        password,
+        attributes: {
+          email, // optional
+          phone_number, // optional - E.164 number convention
+          // other custom attributes
+        },
+        autoSignIn: {
+          // optional - enables auto sign in after user is confirmed
+          enabled: true,
+        },
+      });
+      console.log(user);
+    } catch (error) {
+      console.log("error signing up:", error);
+    }
+  };
+
   const { data: session, status } = useSession();
   return (
     <nav className="header">
@@ -31,7 +53,7 @@ function Navbar() {
               href="/api/auth/signin"
               onClick={(e) => {
                 e.preventDefault();
-                signIn();
+                signingUp();
               }}
             >
               Sign In

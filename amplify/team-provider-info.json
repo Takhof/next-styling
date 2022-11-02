@@ -17,6 +17,9 @@
           "appId": "dm6i5hqppim85",
           "type": "cicd"
         }
+      },
+      "auth": {
+        "nextstyling": {}
       }
     }
   }
