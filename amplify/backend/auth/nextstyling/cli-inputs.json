@@ -36,7 +36,7 @@
     "usernameAttributes": [
       "email"
     ],
-    "useDefault": "default",
+    "useDefault": "manual",
     "userPoolGroups": false,
     "userPoolGroupList": [],
     "adminQueries": false,
@@ -57,6 +57,7 @@
     },
     "breakCircularDependency": true,
     "dependsOn": [],
-    "authProviders": []
+    "authProviders": [],
+    "thirdPartyAuth": false
   }
 }

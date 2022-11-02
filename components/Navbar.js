@@ -1,17 +1,20 @@
 import Link from "next/link";
 // import { signIn, signOut, useSession } from "next-auth/react";
-import { Auth } from "aws-amplify";
+import { Auth, Amplify } from "aws-amplify";
+import { withAuthenticator } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
 
-function Navbar() {
-  const signingUp = async function signUp() {
+function Navbar({ signUp, user }) {
+  let username = "tomato";
+  let password = "tomatopassword";
+  let email = "tomato@aol.com";
+  const signUpTest = async function signUp() {
     try {
       const { user } = await Auth.signUp({
         username,
         password,
         attributes: {
           email, // optional
-          phone_number, // optional - E.164 number convention
-          // other custom attributes
         },
         autoSignIn: {
           // optional - enables auto sign in after user is confirmed
@@ -23,7 +26,6 @@ function Navbar() {
       console.log("error signing up:", error);
     }
   };
-
   // const { data: session, status } = useSession();
   return (
     <nav className="header">
@@ -48,15 +50,7 @@ function Navbar() {
         </li>
 
         <li>
-          <Link
-            href="/api/auth/signin"
-            onClick={(e) => {
-              e.preventDefault();
-              signingUp();
-            }}
-          >
-            Sign In
-          </Link>
+          <button onClick={signUpTest}>Sign Up</button>
         </li>
 
         <li>
