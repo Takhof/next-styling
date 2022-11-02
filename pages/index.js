@@ -10,7 +10,11 @@ export default function Home(props) {
       <main className={styles.main}>
         <h2>
           {session ? `${session.user.name}, ` : ""}
-          Welcome to <a href="http://takhof.github.io">Tom</a>s Test Page!
+          Welcome to{" "}
+          <a href="http://takhof.github.io" target="_blank">
+            Tom
+          </a>
+          s Test Page!
         </h2>
         <p></p>
         <h3>
