@@ -2,8 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-        "@/layout/*": ["components/layout/*"]
-      },
+      "@/layout/*": [
+        "components/layout/*"
+      ]
+    },
     "lib": [
       "dom",
       "dom.iterable",
@@ -20,7 +22,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
   },
   "include": [
     "next-env.d.ts",
