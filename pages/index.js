@@ -11,7 +11,11 @@ export default function Home(props) {
         <h2>
           {session ? `${session.user.name}, ` : ""}
           Welcome to{" "}
-          <a href="http://takhof.github.io" target="_blank">
+          <a
+            href="http://takhof.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Tom
           </a>
           s Test Page!
