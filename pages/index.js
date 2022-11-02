@@ -3,13 +3,12 @@ import styles from "../styles/Home.module.css";
 import { useSession } from "next-auth/react";
 
 export default function Home(props) {
-  const { data: session, data, status } = useSession();
-  console.log(data, session, status);
+  // console.log(data, session, status);
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <h2>
-          {session ? `${session.user.name}, ` : ""}
+          {/* {session ? `${session.user.name}, ` : ""} */}
           Welcome to{" "}
           <a
             href="http://takhof.github.io"

@@ -24,7 +24,7 @@ function Navbar() {
     }
   };
 
-  const { data: session, status } = useSession();
+  // const { data: session, status } = useSession();
   return (
     <nav className="header">
       <h1 className="logo">
@@ -47,33 +47,30 @@ function Navbar() {
           </Link>
         </li>
 
-        {status === "unauthenticated" && (
-          <li>
-            <Link
-              href="/api/auth/signin"
+        <li>
+          <Link
+            href="/api/auth/signin"
+            onClick={(e) => {
+              e.preventDefault();
+              signingUp();
+            }}
+          >
+            Sign In
+          </Link>
+        </li>
+
+        <li>
+          <Link legacyBehavior href="/api/auth/signout">
+            <a
               onClick={(e) => {
                 e.preventDefault();
-                signingUp();
+                signOut();
               }}
             >
-              Sign In
-            </Link>
-          </li>
-        )}
-        {status === "authenticated" && (
-          <li>
-            <Link legacyBehavior href="/api/auth/signout">
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  signOut();
-                }}
-              >
-                Sign Out
-              </a>
-            </Link>
-          </li>
-        )}
+              Sign Out
+            </a>
+          </Link>
+        </li>
       </ul>
     </nav>
   );

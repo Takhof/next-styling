@@ -8,8 +8,6 @@ import "components/Navbar.css";
 import Navbar from "components/Navbar";
 import { SessionProvider } from "next-auth/react";
 import { Amplify, Auth } from "aws-amplify";
-import awsconfig from "./aws-exports";
-Amplify.configure(awsconfig);
 
 const theme = {
   colors: {
