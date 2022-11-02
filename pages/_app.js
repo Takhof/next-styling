@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemeProvider } from "styled-components";
-import Footer from "@/layout/Footer";
+import Footer from "../components/layout/Footer";
 import "styles/layout.css";
 import Head from "next/head";
 import "components/Navbar.css";
