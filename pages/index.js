@@ -1,14 +1,18 @@
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { useSession } from "next-auth/react";
+import { Amplify } from "aws-amplify";
+import { withAuthenticator } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
+import awsExports from "../src/aws-exports";
+Amplify.configure(awsExports);
 
-export default function Home(props) {
+function Home({ timestamp, signOut, user }) {
   // console.log(data, session, status);
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <h2>
-          {/* {session ? `${session.user.name}, ` : ""} */}
+          {console.log(user)}
           Welcome to{" "}
           <a
             href="http://takhof.github.io"
@@ -23,8 +27,11 @@ export default function Home(props) {
         <h3>
           <p>Testing ISR on AWS....</p>
           <p>
-            Current time is {props.timestamp} milliseconds since the beginning
-            of time.
+            Current time is {timestamp} milliseconds since the beginning of
+            time.
+          </p>
+          <p>
+            Click <button onClick={signOut}>Here</button> to log out.{" "}
           </p>
         </h3>
       </main>
@@ -53,3 +60,5 @@ export const getStaticProps = async (context) => {
     revalidate: 30,
   };
 };
+
+export default withAuthenticator(Home);
