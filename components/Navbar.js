@@ -30,7 +30,7 @@ function Navbar({ signUp, user }) {
   return (
     <nav className="header">
       <h1 className="logo">
-        <a href="#">NextAuth</a>
+        <a href="#">Amazon Auth</a>
       </h1>
       <ul className={`main-nav`}>
         <li>
