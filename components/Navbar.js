@@ -5,28 +5,9 @@ import { withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 
 function Navbar({ signUp, user }) {
-  let username = "tomato";
+  let username = "tomato@tomato.com";
   let password = "tomatopassword";
-  let email = "tomato@aol.com";
-  const signUpTest = async function signUp() {
-    try {
-      const { user } = await Auth.signUp({
-        username,
-        password,
-        attributes: {
-          email, // optional
-        },
-        autoSignIn: {
-          // optional - enables auto sign in after user is confirmed
-          enabled: true,
-        },
-      });
-      console.log(user);
-    } catch (error) {
-      console.log("error signing up:", error);
-    }
-  };
-  // const { data: session, status } = useSession();
+  let email = "tomato@tomato.com";
   return (
     <nav className="header">
       <h1 className="logo">
@@ -47,10 +28,6 @@ function Navbar({ signUp, user }) {
           <Link legacyBehavior href="/blog">
             <a>Blog</a>
           </Link>
-        </li>
-
-        <li>
-          <button onClick={signUpTest}>Sign Up</button>
         </li>
 
         <li>

@@ -1,4 +1,3 @@
-import { useSession, signIn } from "next-auth/react";
 import { useEffect } from "react";
 
 function Dashboard() {
