@@ -28,7 +28,11 @@
         }
       },
       "api": {
-        "tomAPI": {}
+        "tomAPI": {},
+        "nextstyling": {}
+      },
+      "storage": {
+        "tomatoimage": {}
       }
     }
   },

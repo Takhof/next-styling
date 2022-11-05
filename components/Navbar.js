@@ -1,8 +1,8 @@
 import Link from "next/link";
+// import { signIn, signOut, useSession } from "next-auth/react";
 import "@aws-amplify/ui-react/styles.css";
 import { Amplify } from "aws-amplify";
 import { Auth, Authenticator, withAuthenticator } from "@aws-amplify/ui-react";
-
 function Navbar() {
   return (
     <nav className="header">
@@ -23,25 +23,6 @@ function Navbar() {
         <li>
           <Link legacyBehavior href="/blog">
             <a>Blog</a>
-          </Link>
-        </li>
-        <li>
-          <button onClick={() => Authenticator.SignIn({ provider: "Google" })}>
-            {" "}
-            Sign in
-          </button>
-        </li>
-
-        <li>
-          <Link legacyBehavior href="/api/auth/signout">
-            <a
-              onClick={(e) => {
-                e.preventDefault();
-                signOut();
-              }}
-            >
-              Sign Out
-            </a>
           </Link>
         </li>
       </ul>
