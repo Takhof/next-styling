@@ -1,13 +1,9 @@
 import Link from "next/link";
-// import { signIn, signOut, useSession } from "next-auth/react";
-import { Auth, Amplify } from "aws-amplify";
-import { withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
+import { Amplify } from "aws-amplify";
+import { Auth, Authenticator, withAuthenticator } from "@aws-amplify/ui-react";
 
-function Navbar({ signUp, user }) {
-  let username = "tomato@tomato.com";
-  let password = "tomatopassword";
-  let email = "tomato@tomato.com";
+function Navbar() {
   return (
     <nav className="header">
       <h1 className="logo">
@@ -28,6 +24,12 @@ function Navbar({ signUp, user }) {
           <Link legacyBehavior href="/blog">
             <a>Blog</a>
           </Link>
+        </li>
+        <li>
+          <button onClick={() => Authenticator.SignIn({ provider: "Google" })}>
+            {" "}
+            Sign in
+          </button>
         </li>
 
         <li>

@@ -1,10 +1,8 @@
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { Amplify } from "aws-amplify";
-import { withAuthenticator } from "@aws-amplify/ui-react";
+import { Auth, withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
-import awsExports from "../src/aws-exports";
-Amplify.configure(awsExports);
 
 function Home({ timestamp, signOut, user }) {
   // console.log(data, session, status);

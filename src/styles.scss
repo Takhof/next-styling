@@ -1,0 +1,23 @@
+@import '@aws-amplify/ui-react/theme.css';
+
+.amplify-tabs {
+    display: none;
+}
+
+body {
+    margin: 0px;
+}
+
+[data-amplify-authenticator] {
+    --amplify-components-button-primary-background-color: chocolate;
+    --amplify-components-button-primary-active-background-color: chocolate;
+    --amplify-components-button-primary-visited-background-color: chocolate;
+    --amplify-components-button-primary-focus-background-color: chocolate;
+    --amplify-components-button-primary-hover-background-color: sandybrown;
+    --amplify-components-button-link-color: chocolate;
+    --amplify-components-button-link-hover-color: chocolate;
+    --amplify-components-button-link-focus-color: chocolate;
+    --amplify-components-button-link-active-color: peachpuff;
+    --amplify-components-button-link-hover-background-color: peachpuff;
+    --amplify-components-button-link-active-background-color: sandybrown;
+}
