@@ -5,7 +5,6 @@ import { Auth, withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 
 function Home({ timestamp, signOut, user }) {
-  // console.log(data, session, status);
   return (
     <div className={styles.container}>
       <main className={styles.main}>

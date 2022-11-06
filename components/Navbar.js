@@ -1,8 +1,5 @@
 import Link from "next/link";
-// import { signIn, signOut, useSession } from "next-auth/react";
 import "@aws-amplify/ui-react/styles.css";
-import { Amplify } from "aws-amplify";
-import { Auth, Authenticator, withAuthenticator } from "@aws-amplify/ui-react";
 function Navbar() {
   return (
     <nav className="header">
